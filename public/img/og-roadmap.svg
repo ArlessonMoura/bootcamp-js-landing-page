@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="background" x1="36" y1="0" x2="1160" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10172d"/>
+      <stop offset="0.55" stop-color="#080b20"/>
+      <stop offset="1" stop-color="#171034"/>
+    </linearGradient>
+    <linearGradient id="headline" x1="64" y1="143" x2="526" y2="197" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#35e6ff"/>
+      <stop offset="1" stop-color="#b5a0ff"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="255" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#202944" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#10172e" stop-opacity="0.98"/>
+    </linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" stroke="#b9caff" stroke-opacity="0.07"/>
+    </pattern>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(0 368 -650 0 1030 -38)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6245c4" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#6245c4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <path fill="url(#background)" d="M0 0h1200v630H0z"/>
+  <path fill="url(#glow)" d="M0 0h1200v630H0z"/>
+  <path fill="url(#grid)" d="M0 0h1200v630H0z"/>
+  <path d="M64 46h9" stroke="#35e6ff" stroke-width="3" stroke-linecap="round"/>
+  <text x="84" y="51" fill="#c1cada" font-family="Hanken Grotesk, sans-serif" font-size="15" font-weight="700" letter-spacing="1.4">BOOTCAMP FULL STACK</text>
+  <text x="64" y="125" fill="#f4f6ff" font-family="Hanken Grotesk, sans-serif" font-size="56" font-weight="700">Do terminal ao</text>
+  <text x="64" y="188" fill="url(#headline)" font-family="Hanken Grotesk, sans-serif" font-size="56" font-weight="700">deploy.</text>
+  <text x="66" y="222" fill="#aab5ce" font-family="Hanken Grotesk, sans-serif" font-size="18" font-weight="500">Uma trilha prática para criar aplicações completas.</text>
+
+  <rect x="864" y="62" width="272" height="154" rx="20" fill="#10172d" fill-opacity="0.72" stroke="#9a8bff" stroke-opacity="0.45"/>
+  <text x="888" y="107" fill="#35e6ff" font-family="Hanken Grotesk, sans-serif" font-size="14" font-weight="700" letter-spacing="1.2">APRENDIZADO EM PROJETOS</text>
+  <text x="888" y="165" fill="#f4f6ff" font-family="Unbounded, sans-serif" font-size="44" font-weight="600">9 meses</text>
+  <text x="889" y="193" fill="#aab5ce" font-family="Hanken Grotesk, sans-serif" font-size="16" font-weight="500">do primeiro comando ao deploy</text>
+
+  <path d="M92 282H1108" stroke="#64739a" stroke-opacity="0.55" stroke-width="2"/>
+  <path d="M92 282H1108" stroke="#35e6ff" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="3 11"/>
+
+  <g transform="translate(56 302)">
+    <rect width="255" height="266" rx="18" fill="url(#card)" stroke="#35e6ff" stroke-opacity="0.52"/>
+    <circle cx="24" cy="-20" r="7" fill="#35e6ff" stroke="#10172d" stroke-width="5"/>
+    <text x="20" y="39" fill="#35e6ff" font-family="Hanken Grotesk, sans-serif" font-size="13" font-weight="700" letter-spacing="1.1">01  /  COMEÇAR</text>
+    <text x="20" y="79" fill="#f4f6ff" font-family="Hanken Grotesk, sans-serif" font-size="24" font-weight="700">Fundamentos</text>
+    <text x="20" y="108" fill="#aab5ce" font-family="Hanken Grotesk, sans-serif" font-size="13" font-weight="500">Terminal, Web, Git, JavaScript</text>
+    <g transform="translate(20 143)">
+      <rect width="48" height="48" rx="12" fill="#f3f5ff"/><image href="../logos/linux.png" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+      <rect x="56" width="48" height="48" rx="12" fill="#f3f5ff"/><image href="../logos/html5.png" x="56" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+      <rect x="112" width="48" height="48" rx="12" fill="#f3f5ff"/><image href="../logos/css3.png" x="112" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+      <rect x="168" width="48" height="48" rx="12" fill="#f3f5ff"/><image href="../logos/github.png" x="168" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+    </g>
+    <text x="20" y="231" fill="#d5dded" font-family="Hanken Grotesk, sans-serif" font-size="13" font-weight="600">Uma base para seguir construindo.</text>
+  </g>
+
+  <g transform="translate(333 302)">
+    <rect width="255" height="266" rx="18" fill="url(#card)" stroke="#a18aff" stroke-opacity="0.58"/>
+    <circle cx="24" cy="-20" r="7" fill="#a18aff" stroke="#10172d" stroke-width="5"/>
+    <text x="20" y="39" fill="#b5a0ff" font-family="Hanken Grotesk, sans-serif" font-size="13" font-weight="700" letter-spacing="1.1">02  /  INTERFACES</text>
+    <text x="20" y="79" fill="#f4f6ff" font-family="Hanken Grotesk, sans-serif" font-size="24" font-weight="700">Front-end</text>
+    <text x="20" y="108" fill="#aab5ce" font-family="Hanken Grotesk, sans-serif" font-size="13" font-weight="500">React, estado e aplicações SPA</text>
+    <rect x="103" y="137" width="48" height="48" rx="12" fill="#f3f5ff"/>
+    <image href="../logos/react.png" x="103" y="137" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+    <text x="20" y="231" fill="#d5dded" font-family="Hanken Grotesk, sans-serif" font-size="13" font-weight="600">Interfaces conectadas a APIs.</text>
+  </g>
+
+  <g transform="translate(610 302)">
+    <rect width="255" height="266" rx="18" fill="url(#card)" stroke="#ff5ad9" stroke-opacity="0.54"/>
+    <circle cx="24" cy="-20" r="7" fill="#ff5ad9" stroke="#10172d" stroke-width="5"/>
+    <text x="20" y="39" fill="#ff82df" font-family="Hanken Grotesk, sans-serif" font-size="13" font-weight="700" letter-spacing="1.1">03  /  SERVIDOR</text>
+    <text x="20" y="79" fill="#f4f6ff" font-family="Hanken Grotesk, sans-serif" font-size="24" font-weight="700">Back-end</text>
+    <text x="20" y="108" fill="#aab5ce" font-family="Hanken Grotesk, sans-serif" font-size="13" font-weight="500">APIs, dados e segurança</text>
+    <g transform="translate(20 143)">
+      <rect width="48" height="48" rx="12" fill="#f3f5ff"/><image href="../logos/node.png" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+      <rect x="56" width="48" height="48" rx="12" fill="#f3f5ff"/><image href="../logos/express.png" x="56" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+      <rect x="112" width="48" height="48" rx="12" fill="#f3f5ff"/><image href="../logos/postgresql.png" x="112" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+      <rect x="168" width="48" height="48" rx="12" fill="#f3f5ff"/><image href="../logos/mongodb.png" x="168" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+    </g>
+    <text x="20" y="231" fill="#d5dded" font-family="Hanken Grotesk, sans-serif" font-size="13" font-weight="600">Serviços e dados em produção.</text>
+  </g>
+
+  <g transform="translate(887 302)">
+    <rect width="255" height="266" rx="18" fill="url(#card)" stroke="#ffbf69" stroke-opacity="0.55"/>
+    <circle cx="24" cy="-20" r="7" fill="#ffbf69" stroke="#10172d" stroke-width="5"/>
+    <text x="20" y="39" fill="#ffca83" font-family="Hanken Grotesk, sans-serif" font-size="13" font-weight="700" letter-spacing="1.1">04  /  EXPANDIR</text>
+    <text x="20" y="79" fill="#f4f6ff" font-family="Hanken Grotesk, sans-serif" font-size="24" font-weight="700">Especial</text>
+    <text x="20" y="108" fill="#aab5ce" font-family="Hanken Grotesk, sans-serif" font-size="13" font-weight="500">Desktop, mobile e nuvem</text>
+    <g transform="translate(48 143)">
+      <rect width="48" height="48" rx="12" fill="#f3f5ff"/><image href="../logos/electron.png" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+      <rect x="56" width="48" height="48" rx="12" fill="#f3f5ff"/><image href="../logos/react-native.png" x="56" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+      <rect x="112" width="48" height="48" rx="12" fill="#f3f5ff"/><image href="../logos/aws.png" x="112" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+    </g>
+    <text x="20" y="231" fill="#d5dded" font-family="Hanken Grotesk, sans-serif" font-size="13" font-weight="600">Aplique em novas plataformas.</text>
+  </g>
+</svg>

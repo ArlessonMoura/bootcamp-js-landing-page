@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootcamp Full Stack: do terminal ao deploy</title>
+    <meta
+      name="description"
+      content="Fundamentos, Front-end e Back-end em 9 meses, com projetos em cada etapa. R$ 170 por mês."
+    />
+    <meta name="theme-color" content="#04061a" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bootcamp Full Stack" />
+    <meta property="og:title" content="Bootcamp Full Stack: do terminal ao deploy" />
+    <meta
+      property="og:description"
+      content="Fundamentos, Front-end e Back-end em 9 meses, com projetos em cada etapa."
+    />
+    <meta property="og:image" content="./img/og-roadmap.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Roadmap do Bootcamp Full Stack: Fundamentos, Front-end, Back-end e Especial."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bootcamp Full Stack: do terminal ao deploy" />
+    <meta
+      name="twitter:description"
+      content="Fundamentos, Front-end e Back-end em 9 meses, com projetos em cada etapa."
+    />
+    <meta name="twitter:image" content="./img/og-roadmap.png" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+
+    <nav class="navbar navbar-expand-md fixed-top p-2 p-md-3" aria-label="Principal">
+      <div class="container">
+        <div
+          class="glass nav-glass w-100 d-flex flex-wrap align-items-center justify-content-between px-3 py-2"
+        >
+          <a class="navbar-brand m-0 fw-semibold" href="#topo">Bootcamp Full Stack</a>
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu"
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Abrir menu"
+          >
+            <i class="bi bi-list fs-2"></i>
+          </button>
+          <div class="collapse navbar-collapse justify-content-md-end" id="menu">
+            <ul class="navbar-nav gap-md-3 pt-2 pt-md-0">
+              <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#condicoes">Condições</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#inscricao">Inscrição</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <header id="topo" class="hero vh-lg-100 d-flex flex-column justify-content-center">
+        <div class="container">
+          <div class="row align-items-center g-4 g-lg-5">
+            <div class="col-12 col-lg-6">
+              <h1 class="display-5 fw-bold">Do terminal ao deploy.</h1>
+              <p class="lead mt-3">
+                Fundamentos, Front-end e Back-end em 9 meses. Você constrói projetos em
+                cada etapa e aprende a criar aplicações completas.
+              </p>
+              <div class="d-flex flex-column flex-sm-row gap-2 gap-sm-3 mt-4">
+                <a class="btn btn-neon btn-lg" href="#inscricao"
+                  >Quero entrar no bootcamp</a
+                >
+                <a class="btn btn-glass btn-lg" href="#roadmap">Ver o roadmap</a>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div
+                class="term glass"
+                role="img"
+                aria-label="Terminal mostrando o caminho do curso: criar a pasta, versionar com Git, criar o front-end, subir uma API e modelar o banco de dados."
+              >
+                <div class="term-bar"><i></i><i></i><i></i><span>~/meu-app</span></div>
+                <div class="term-body" id="term" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center mt-4">
+            <div class="col-12 col-xl-10">
+              <p class="text-center text-body-secondary small mb-2">
+                Tecnologias que você vai usar
+              </p>
+              <ul
+                id="gallery"
+                class="row row-cols-5 row-cols-sm-8 g-2 g-lg-3 justify-content-center list-unstyled mb-0"
+              ></ul>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section id="roadmap" class="roadmap py-5">
+        <div class="container py-lg-4">
+          <div class="row">
+            <div class="col-12 col-lg-8">
+              <h2 class="display-6 fw-bold">O caminho completo</h2>
+              <p class="lead text-body-secondary mt-3">
+                Três blocos e um módulo especial, com projetos focados em habilidades
+                específicas. Escolha um bloco para ver os módulos.
+              </p>
+            </div>
+          </div>
+          <div id="bento" class="row g-3 mt-3"></div>
+          <div id="panes" class="mt-4"></div>
+        </div>
+      </section>
+
+      <section id="condicoes" class="py-5">
+        <div class="container py-lg-4">
+          <div class="row">
+            <div class="col-12 col-lg-8">
+              <h2 class="display-6 fw-bold">Como funciona</h2>
+              <p class="lead text-body-secondary mt-3">
+                Mensalidade fixa e regras claras desde o início.
+              </p>
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3 mt-2">
+            <div class="col">
+              <div class="glass cond h-100">
+                <span class="mod-ico mb-3"><i class="bi bi-calendar-range"></i></span>
+                <p class="cond-value mb-2 text-body">9 meses</p>
+                <p class="mb-0">
+                  Se passar disso, eu continuo dando aula e não cobro o mês extra. Se a
+                  turma render mais rápido, o curso termina antes e as mensalidades
+                  também.
+                </p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="glass cond h-100">
+                <span class="mod-ico mb-3"><i class="bi bi-credit-card"></i></span>
+                <p class="cond-value mb-2 text-body">R$ 170 por mês</p>
+                <p class="mb-0">
+                  Aceito cartão com pagamento recorrente: cada mensalidade é cobrada
+                  separadamente e não compromete o limite do cartão.
+                </p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="glass cond h-100">
+                <span class="mod-ico mb-3"><i class="bi bi-person-plus"></i></span>
+                <p class="cond-value mb-2 text-body">R$ 20 de desconto</p>
+                <p class="mb-0">
+                  Indique 2 pessoas e ganhe o desconto. Mais indicações não aumentam o
+                  valor.
+                </p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="glass cond h-100">
+                <span class="mod-ico mb-3"><i class="bi bi-people"></i></span>
+                <p class="cond-value mb-2 text-body">Turma com 20 alunos</p>
+                <p class="mb-0">
+                  Se desistências deixarem a turma com menos de 20 alunos, o curso pode
+                  ser cancelado.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="inscricao" class="py-5">
+        <div class="container py-lg-4">
+          <div class="row g-4 g-lg-5 align-items-start">
+            <div class="col-12 col-lg-5 sticky-lg-top sticky-offset">
+              <h2 class="display-6 fw-bold">Não é só aprender tecnologias.</h2>
+              <p class="lead text-body-secondary mt-3">
+                É desenvolver mentalidade arquitetural, domínio de fundamentos e a
+                capacidade de construir aplicações completas, do terminal ao deploy.
+              </p>
+              <h3 class="h5 mt-4 mb-2">Ao final, você será capaz de</h3>
+              <ul id="goals" class="goals list-unstyled mb-0"></ul>
+            </div>
+            <div class="col-12 col-lg-7">
+              <div class="glass p-3 p-md-4">
+                <div
+                  class="d-flex flex-column flex-sm-row align-items-sm-center gap-3 mb-3"
+                >
+                  <img
+                    class="avatar"
+                    src="/img/call-me.png"
+                    alt="Avatar do instrutor fazendo o gesto de telefone"
+                    width="360"
+                    height="338"
+                    loading="lazy"
+                  />
+                  <div>
+                    <h2 class="h3 mb-2">Seu próximo passo começa aqui</h2>
+                    <p class="text-body-secondary mb-0">
+                      Deixe seu nome e telefone. Eu entro em contato para explicar como o
+                      bootcamp funciona.
+                    </p>
+                  </div>
+                </div>
+                <div class="glass form-frame">
+                  <iframe
+                    class="hform-1 hform-md-2 hform-lg-3"
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSeC5qoa5echE7JwCRh4OlxejpJqkqQGQ7lIUBendcmzC4F0AQ/viewform?embedded=true"
+                    title="Formulário de interesse no bootcamp"
+                    frameborder="0"
+                    marginheight="0"
+                    marginwidth="0"
+                    loading="lazy"
+                    >Carregando…</iframe
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-center text-body-secondary py-4 pb-5">Per Aspera Ad Astra</footer>
+
+    <a
+      class="wa-fab position-fixed bottom-0 end-0 m-3 m-lg-4"
+      data-wa
+      href="#"
+      target="_blank"
+      rel="noopener"
+      aria-label="Tirar dúvidas no WhatsApp"
+    >
+      <i class="bi bi-whatsapp"></i><span>Dúvidas?</span>
+    </a>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
