@@ -6,7 +6,9 @@
   <p><strong>Um caminho prático para sair dos fundamentos e construir aplicações completas.</strong></p>
 
   <p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeC5qoa5echE7JwCRh4OlxejpJqkqQGQ7lIUBendcmzC4F0AQ/viewform"><strong>Quero saber mais e me inscrever</strong></a>
+    <a href="https://bootcampjs.netlify.app/"><strong>Visitar a landing page</strong></a>
+    &nbsp;·&nbsp;
+    <a href="https://bootcampjs.netlify.app/#inscricao"><strong>Quero saber mais e me inscrever</strong></a>
     &nbsp;·&nbsp;
     <a href="https://wa.me/5581998909050?text=Ol%C3%A1%21%20Vi%20o%20roadmap%20do%20Bootcamp%20Full%20Stack%20e%20tenho%20uma%20d%C3%BAvida.">Tirar uma dúvida pelo WhatsApp</a>
   </p>
@@ -31,11 +33,11 @@ Cada etapa inclui prática orientada. Ao longo do caminho, você trabalha em pro
 
 ## Vamos conversar?
 
-Quer entender se o bootcamp combina com o seu momento? Conte um pouco sobre você no formulário ou mande sua dúvida pelo WhatsApp. Sem mistério: a ideia é explicar como funciona e ajudar você a decidir com tranquilidade.
+Quer entender se o bootcamp combina com o seu momento? Visite a [landing page](https://bootcampjs.netlify.app/) e conte um pouco sobre você no formulário de inscrição, ou mande sua dúvida pelo WhatsApp. Sem mistério: a ideia é explicar como funciona e ajudar você a decidir com tranquilidade.
 
 <div align="center">
   <p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeC5qoa5echE7JwCRh4OlxejpJqkqQGQ7lIUBendcmzC4F0AQ/viewform"><strong>📋 Tenho interesse no bootcamp</strong></a>
+    <a href="https://bootcampjs.netlify.app/#inscricao"><strong>📋 Tenho interesse no bootcamp</strong></a>
     &nbsp;&nbsp;
     <a href="https://wa.me/5581998909050?text=Ol%C3%A1%21%20Vi%20o%20roadmap%20do%20Bootcamp%20Full%20Stack%20e%20tenho%20uma%20d%C3%BAvida."><strong>💬 Conversar pelo WhatsApp</strong></a>
   </p>
