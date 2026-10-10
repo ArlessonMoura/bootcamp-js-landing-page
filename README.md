@@ -6,9 +6,7 @@
   <p><strong>Um caminho prático para sair dos fundamentos e construir aplicações completas.</strong></p>
 
   <p>
-    <a href="https://bootcampjs.netlify.app/"><strong>Visitar a landing page</strong></a>
-    &nbsp;·&nbsp;
-    <a href="https://bootcampjs.netlify.app/#inscricao"><strong>Quero saber mais e me inscrever</strong></a>
+    <a href="https://bootcampjs.netlify.app/"><strong>Quero saber mais e me inscrever</strong></a>
     &nbsp;·&nbsp;
     <a href="https://wa.me/5581998909050?text=Ol%C3%A1%21%20Vi%20o%20roadmap%20do%20Bootcamp%20Full%20Stack%20e%20tenho%20uma%20d%C3%BAvida.">Tirar uma dúvida pelo WhatsApp</a>
   </p>
