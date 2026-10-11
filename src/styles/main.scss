@@ -5,65 +5,90 @@
 //   - nenhuma media query escrita à mão neste projeto
 //   - nenhum CSS Grid; o "grid" do Bootstrap (row/col) é flexbox
 // ============================================================
-@import "bootstrap/scss/functions";
+@import 'bootstrap/scss/functions';
 
 // ---- variáveis (antes de importar as variáveis do Bootstrap) ----
-$font-family-sans-serif: "Hanken Grotesk Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
-$headings-font-family: "Unbounded Variable", $font-family-sans-serif;
+$font-family-sans-serif:
+  'Hanken Grotesk Variable',
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  sans-serif;
+$headings-font-family: 'Unbounded Variable', $font-family-sans-serif;
 $headings-font-weight: 600;
 $headings-line-height: 1.12;
 $font-size-base: 1.05rem;
 $line-height-base: 1.6;
 $enable-shadows: false;
-$grid-row-columns: 8;   // habilita row-cols-sm-8 (galeria do hero)
+$grid-row-columns: 8; // habilita row-cols-sm-8 (galeria do hero)
 $enable-negative-margins: false;
 $primary: #35e6ff;
 $body-bg-dark: #04061a;
 $body-color-dark: #f6f8ff;
-$body-secondary-color-dark: rgba(222, 229, 255, .8);
+$body-secondary-color-dark: rgba(222, 229, 255, 0.8);
 $body-tertiary-bg-dark: #0b0f2e;
-$border-color-dark: rgba(255, 255, 255, .2);
+$border-color-dark: rgba(255, 255, 255, 0.2);
 $link-color-dark: #35e6ff;
 $navbar-light-color: #f6f8ff;
-$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px, xxl: 1240px);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1240px,
+);
 
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/variables-dark";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/utilities";
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
 
 // ---- utilitários: vh-lg-100 (hero), display sem a opção grid, altura do formulário ----
 $utilities: map-merge(
   $utilities,
   (
-    "viewport-height": map-merge(map-get($utilities, "viewport-height"), (responsive: true)),
-    "display": map-merge(
-      map-get($utilities, "display"),
-      (print: false, values: inline inline-block block table table-row table-cell flex inline-flex none)
-    ),
-    "form-height": (
+    'viewport-height': map-merge(
+        map-get($utilities, 'viewport-height'),
+        (
+          responsive: true,
+        )
+      ),
+    'display': map-merge(
+        map-get($utilities, 'display'),
+        (
+          print: false,
+          values: inline inline-block block table table-row table-cell flex inline-flex
+            none,
+        )
+      ),
+    'form-height': (
       responsive: true,
       property: height,
       class: hform,
-      values: (1: 1250px, 2: 1050px, 3: 960px)
-    )
+      values: (
+        1: 1250px,
+        2: 1050px,
+        3: 960px,
+      ),
+    ),
   )
 );
 
-@import "bootstrap/scss/root";
-@import "bootstrap/scss/reboot";
-@import "bootstrap/scss/type";
-@import "bootstrap/scss/images";
-@import "bootstrap/scss/containers";
-@import "bootstrap/scss/grid";
-@import "bootstrap/scss/buttons";
-@import "bootstrap/scss/transitions";
-@import "bootstrap/scss/nav";
-@import "bootstrap/scss/navbar";
-@import "bootstrap/scss/accordion";
-@import "bootstrap/scss/badge";
-@import "bootstrap/scss/helpers";
-@import "bootstrap/scss/utilities/api";
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/images';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/nav';
+@import 'bootstrap/scss/navbar';
+@import 'bootstrap/scss/accordion';
+@import 'bootstrap/scss/badge';
+@import 'bootstrap/scss/helpers';
+@import 'bootstrap/scss/utilities/api';
 
-@import "custom";
+@import 'custom';

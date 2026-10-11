@@ -153,6 +153,22 @@ a {
   font-size: 0.95rem;
   color: var(--bs-body-color);
 }
+.brand-mark {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: none;
+}
+.navbar-brand .brand-mark {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.hero-brand {
+  color: var(--neon-cy);
+  font-family: var(--bs-heading-font-family, inherit);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
 .navbar .nav-link {
   color: var(--bs-body-secondary-color);
   font-weight: 500;
@@ -230,6 +246,38 @@ a {
     Menlo,
     Consolas,
     monospace;
+  font-family:
+    'MesloLGS NF', 'MesloLGS Nerd Font Mono', 'MesloLGS Nerd Font', ui-monospace,
+    SFMono-Regular, Menlo, Consolas, monospace;
+}
+.term-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.term-segment {
+  padding: 0.16rem 0.5rem;
+  border-radius: 0.2rem;
+}
+.term-segment--location {
+  color: #04061a;
+  background: #35e6ff;
+}
+.term-segment--branch {
+  color: #fff;
+  background: #7654d6;
+}
+.term-segment--runtime {
+  color: #07140b;
+  background: #4ade80;
+}
+.term-command {
+  margin-bottom: 0.65rem;
+  color: var(--bs-body-color);
 }
 .ln {
   display: block;
@@ -244,6 +292,21 @@ a {
   color: var(--bs-body-secondary-color);
   padding-left: 1.35rem;
   margin-bottom: 0.3rem;
+}
+.ln.out.tone-cyan {
+  color: #67e8f9;
+}
+.ln.out.tone-violet {
+  color: #c4b5fd;
+}
+.ln.out.tone-green {
+  color: #86efac;
+}
+.ln.out.tone-amber {
+  color: #fcd34d;
+}
+.ln.out.tone-blue {
+  color: #93c5fd;
 }
 .ln.out.done {
   color: #4ade80;
@@ -529,6 +592,37 @@ a {
 .cond p {
   color: var(--bs-body-secondary-color);
 }
+.conditions-accordion {
+  --bs-accordion-bg: transparent;
+  --bs-accordion-color: var(--bs-body-color);
+  --bs-accordion-border-width: 0;
+  --bs-accordion-btn-bg: transparent;
+  --bs-accordion-btn-color: var(--bs-body-color);
+  --bs-accordion-active-bg: rgba(53, 230, 255, 0.08);
+  --bs-accordion-active-color: var(--bs-body-color);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(53, 230, 255, 0.4);
+}
+.conditions-accordion .accordion-item {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.03) 55%,
+    rgba(120, 150, 255, 0.07)
+  );
+}
+.conditions-accordion .accordion-button {
+  gap: 0.9rem;
+  font-weight: 600;
+}
+.conditions-accordion .accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
+.conditions-accordion .accordion-body {
+  color: var(--bs-body-secondary-color);
+}
 
 // ---------- CTA ----------
 .goals li {
@@ -549,20 +643,31 @@ a {
 .sticky-offset {
   top: 6.5rem;
 }
-.form-frame {
-  padding: 0.6rem;
-  background: linear-gradient(
-    150deg,
-    rgba(255, 255, 255, 0.22),
-    rgba(255, 255, 255, 0.08)
-  );
+.lead-form {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
 }
-.form-frame iframe {
-  display: block;
-  width: 100%;
-  border: 0;
-  border-radius: 1rem;
-  background: #fff;
+.lead-form .form-control {
+  min-height: 3rem;
+  color: var(--bs-body-color);
+  border-color: rgba(255, 255, 255, 0.24);
+  background-color: rgba(4, 6, 26, 0.55);
+}
+.lead-form .form-control:focus {
+  border-color: var(--neon-cy);
+  box-shadow: 0 0 0 0.2rem rgba(53, 230, 255, 0.2);
+}
+.lead-form .form-check-input:checked {
+  border-color: var(--neon-cy);
+  background-color: var(--neon-cy);
+}
+.lead-form .form-check-input:focus {
+  border-color: var(--neon-cy);
+  box-shadow: 0 0 0 0.2rem rgba(53, 230, 255, 0.2);
+}
+.lead-form .form-check-label,
+.lead-form .form-text {
+  color: var(--bs-body-secondary-color);
 }
 .avatar {
   width: 6.5rem;

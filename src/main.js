@@ -3,7 +3,7 @@ import '@fontsource-variable/unbounded';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Collapse from 'bootstrap/js/dist/collapse';
 import { WHATSAPP_MESSAGE, WHATSAPP_NUMBER } from './config.js';
-import { BLOCKS, GALLERY, GOALS, LOGOS, TERMINAL } from './data.js';
+import { BLOCKS, GALLERY, LOGOS, TERMINAL } from './data.js';
 import './styles/main.scss';
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -107,14 +107,40 @@ $('#panes').addEventListener('shown.bs.collapse', (e) => {
     e.target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
 });
 
-/* ---------- CTA ---------- */
-$('#goals').innerHTML = GOALS.map(
-  (g) => `<li><i class="bi bi-check2-circle"></i><span>${g}</span></li>`,
-).join('');
-
 /* ---------- WhatsApp ---------- */
 const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 document.querySelectorAll('[data-wa]').forEach((a) => (a.href = waUrl));
+
+/* ---------- máscara do WhatsApp ---------- */
+const whatsappInput = $('#lead-whatsapp');
+const formatBrazilianPhone = (value) => {
+  const digits = value.replace(/\D/g, '').slice(0, 11);
+  if (!digits) return '';
+  if (digits.length < 3) return `(${digits}`;
+
+  const areaCode = digits.slice(0, 2);
+  const subscriber = digits.slice(2);
+  const mobile = digits.length > 10 || subscriber.startsWith('9');
+  const firstGroupLength = mobile ? 5 : 4;
+  const firstGroup = subscriber.slice(0, firstGroupLength);
+  const secondGroup = subscriber.slice(firstGroupLength);
+  return `(${areaCode}) ${firstGroup}${secondGroup ? `-${secondGroup}` : ''}`;
+};
+
+whatsappInput.addEventListener('input', () => {
+  const value = whatsappInput.value;
+  const cursor = whatsappInput.selectionStart ?? value.length;
+  const digitsBeforeCursor = value.slice(0, cursor).replace(/\D/g, '').length;
+  whatsappInput.value = formatBrazilianPhone(value);
+
+  let nextCursor = 0;
+  let countedDigits = 0;
+  while (nextCursor < whatsappInput.value.length && countedDigits < digitsBeforeCursor) {
+    if (/\d/.test(whatsappInput.value[nextCursor])) countedDigits += 1;
+    nextCursor += 1;
+  }
+  whatsappInput.setSelectionRange(nextCursor, nextCursor);
+});
 
 /* ---------- menu mobile fecha ao escolher um link ---------- */
 const menu = $('#menu');
@@ -136,26 +162,46 @@ const line = (cls = '') => {
 async function runTerminal() {
   const caret = document.createElement('span');
   caret.className = 'caret';
-  for (const s of TERMINAL) {
-    if (s.cmd) {
-      const cmd = line();
-      cmd.innerHTML = '<span class="p">$</span>';
-      const txt = document.createElement('span');
-      cmd.append(txt, caret);
-      if (reduce) txt.textContent = s.cmd;
-      else
-        for (const ch of s.cmd) {
-          txt.textContent += ch;
-          await sleep(24 + Math.random() * 28);
-        }
-      if (!reduce) await sleep(240);
+  let messageIndex = 0;
+
+  while (true) {
+    const message = TERMINAL[messageIndex];
+    term.replaceChildren();
+
+    const status = line('term-status');
+    status.innerHTML =
+      '<span class="term-segment term-segment--location">~/bootcamp</span><span class="term-segment term-segment--branch">full-stack</span><span class="term-segment term-segment--runtime">node.js</span>';
+
+    const command = line('term-command');
+    const prompt = document.createElement('span');
+    prompt.className = 'p';
+    prompt.textContent = '❯';
+    const commandText = document.createElement('span');
+    command.append(prompt, document.createTextNode(' '), commandText, caret);
+
+    const output = line(`out tone-${message.tone}`);
+    const outputText = document.createElement('span');
+    output.appendChild(outputText);
+
+    if (reduce) {
+      commandText.textContent = message.cmd;
+      outputText.textContent = message.out;
+      command.appendChild(caret);
+      return;
     }
-    const out = line(`out${s.done ? ' done' : ''}`);
-    out.textContent = s.out;
-    if (!reduce) await sleep(480);
+
+    for (const character of message.cmd) {
+      commandText.textContent += character;
+      await sleep(24 + Math.random() * 28);
+    }
+    await sleep(240);
+    output.appendChild(caret);
+    for (const character of message.out) {
+      outputText.textContent += character;
+      await sleep(14 + Math.random() * 12);
+    }
+    await sleep(1800);
+    messageIndex = (messageIndex + 1) % TERMINAL.length;
   }
-  const last = line();
-  last.innerHTML = '<span class="p">$</span>';
-  last.appendChild(caret);
 }
 runTerminal();

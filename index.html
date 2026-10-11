@@ -43,12 +43,15 @@
   <body>
     <div class="bg" aria-hidden="true"></div>
 
-    <nav class="navbar navbar-expand-md fixed-top p-2 p-md-3" aria-label="Principal">
+    <nav
+      class="navbar navbar-expand-lg d-none d-md-flex fixed-top p-2 p-md-3"
+      aria-label="Principal"
+    >
       <div class="container">
         <div
           class="glass nav-glass w-100 d-flex flex-wrap align-items-center justify-content-between px-3 py-2"
         >
-          <a class="navbar-brand m-0 fw-semibold" href="#topo">Bootcamp Full Stack</a>
+          <a class="navbar-brand m-0 fw-semibold" href="#topo"> Bootcamp Full Stack </a>
           <button
             class="navbar-toggler border-0"
             type="button"
@@ -60,8 +63,8 @@
           >
             <i class="bi bi-list fs-2"></i>
           </button>
-          <div class="collapse navbar-collapse justify-content-md-end" id="menu">
-            <ul class="navbar-nav gap-md-3 pt-2 pt-md-0">
+          <div class="collapse navbar-collapse justify-content-lg-end" id="menu">
+            <ul class="navbar-nav gap-lg-3 pt-2 pt-lg-0">
               <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
               <li class="nav-item">
                 <a class="nav-link" href="#condicoes">Condições</a>
@@ -79,29 +82,34 @@
       <header id="topo" class="hero vh-lg-100 d-flex flex-column justify-content-center">
         <div class="container">
           <div class="row align-items-center g-4 g-lg-5">
-            <div class="col-12 col-lg-6">
-              <h1 class="display-5 fw-bold">Do terminal ao deploy.</h1>
-              <p class="lead mt-3">
-                Estuda na área de tecnologia e quer transformar os conceitos da faculdade
-                em aplicações reais e aumentar suas chances de conquistar uma vaga? Neste
-                bootcamp, você desenvolve projetos em cada etapa e aprende, na prática, a
-                criar aplicações completas.
-              </p>
-              <div class="d-flex flex-column flex-sm-row gap-2 gap-sm-3 mt-4">
-                <a class="btn btn-neon btn-lg" href="#inscricao"
-                  >Quero entrar no bootcamp</a
-                >
-                <a class="btn btn-glass btn-lg" href="#roadmap">Ver o roadmap</a>
+            <div class="col-12 col-lg-6 text-center text-lg-start">
+              <div
+                class="hero-brand d-flex align-items-center justify-content-center justify-content-lg-start gap-2 mb-3"
+              >
+                <img
+                  class="brand-mark"
+                  src="./favicon.svg"
+                  width="40"
+                  height="40"
+                  alt=""
+                />
+                <span>Bootcamp Full Stack</span>
               </div>
+              <h1 class="display-5 fw-bold">Do terminal ao Deploy</h1>
+              <p class="lead mt-3 mx-auto mx-lg-0">
+                Não é só aprender tecnologias. É desenvolver mentalidade arquitetural,
+                domínio de fundamentos e a capacidade de construir aplicações completas,
+                do terminal ao deploy.
+              </p>
             </div>
             <div class="col-12 col-lg-6">
               <div
                 class="term glass"
-                role="img"
-                aria-label="Terminal mostrando o caminho do curso: criar a pasta, versionar com Git, criar o front-end, subir uma API e modelar o banco de dados."
+                role="region"
+                aria-label="Terminal com a apresentação do Bootcamp Full Stack"
               >
                 <div class="term-bar"><i></i><i></i><i></i><span>~/meu-app</span></div>
-                <div class="term-body" id="term" aria-hidden="true"></div>
+                <div class="term-body" id="term"></div>
               </div>
             </div>
           </div>
@@ -146,7 +154,9 @@
               </p>
             </div>
           </div>
-          <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3 mt-2">
+          <div
+            class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3 mt-2 d-none d-md-flex"
+          >
             <div class="col">
               <div class="glass cond h-100">
                 <span class="mod-ico mb-3"><i class="bi bi-calendar-range"></i></span>
@@ -189,22 +199,123 @@
               </div>
             </div>
           </div>
+          <div
+            class="accordion conditions-accordion mt-3 d-md-none"
+            id="conditionsAccordion"
+          >
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="condition-duration-heading">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#condition-duration"
+                  aria-expanded="false"
+                  aria-controls="condition-duration"
+                >
+                  <i class="bi bi-calendar-range mod-ico" aria-hidden="true"></i>
+                  <span>9 meses</span>
+                </button>
+              </h3>
+              <div
+                id="condition-duration"
+                class="accordion-collapse collapse"
+                aria-labelledby="condition-duration-heading"
+                data-bs-parent="#conditionsAccordion"
+              >
+                <div class="accordion-body">
+                  Se passar disso, eu continuo dando aula e não cobro o mês extra. Se a
+                  turma render mais rápido, o curso termina antes e as mensalidades
+                  também.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="condition-price-heading">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#condition-price"
+                  aria-expanded="false"
+                  aria-controls="condition-price"
+                >
+                  <i class="bi bi-credit-card mod-ico" aria-hidden="true"></i>
+                  <span>R$ 170 por mês</span>
+                </button>
+              </h3>
+              <div
+                id="condition-price"
+                class="accordion-collapse collapse"
+                aria-labelledby="condition-price-heading"
+                data-bs-parent="#conditionsAccordion"
+              >
+                <div class="accordion-body">
+                  Aceito cartão com pagamento recorrente: cada mensalidade é cobrada
+                  separadamente e não compromete o limite do cartão.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="condition-referral-heading">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#condition-referral"
+                  aria-expanded="false"
+                  aria-controls="condition-referral"
+                >
+                  <i class="bi bi-person-plus mod-ico" aria-hidden="true"></i>
+                  <span>R$ 20 de desconto</span>
+                </button>
+              </h3>
+              <div
+                id="condition-referral"
+                class="accordion-collapse collapse"
+                aria-labelledby="condition-referral-heading"
+                data-bs-parent="#conditionsAccordion"
+              >
+                <div class="accordion-body">
+                  Indique 2 pessoas e ganhe o desconto. Mais indicações não aumentam o
+                  valor.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="condition-class-heading">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#condition-class"
+                  aria-expanded="false"
+                  aria-controls="condition-class"
+                >
+                  <i class="bi bi-people mod-ico" aria-hidden="true"></i>
+                  <span>Turma com 20 alunos</span>
+                </button>
+              </h3>
+              <div
+                id="condition-class"
+                class="accordion-collapse collapse"
+                aria-labelledby="condition-class-heading"
+                data-bs-parent="#conditionsAccordion"
+              >
+                <div class="accordion-body">
+                  Se desistências deixarem a turma com menos de 20 alunos, o curso pode
+                  ser cancelado.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section id="inscricao" class="py-5">
         <div class="container py-lg-4">
           <div class="row g-4 g-lg-5 align-items-start">
-            <div class="col-12 col-lg-5 sticky-lg-top sticky-offset">
-              <h2 class="display-6 fw-bold">Não é só aprender tecnologias.</h2>
-              <p class="lead text-body-secondary mt-3">
-                É desenvolver mentalidade arquitetural, domínio de fundamentos e a
-                capacidade de construir aplicações completas, do terminal ao deploy.
-              </p>
-              <h3 class="h5 mt-4 mb-2">Ao final, você será capaz de</h3>
-              <ul id="goals" class="goals list-unstyled mb-0"></ul>
-            </div>
-            <div class="col-12 col-lg-7">
+            <div class="col-12">
               <div class="glass p-3 p-md-4">
                 <div
                   class="d-flex flex-column flex-sm-row align-items-sm-center gap-3 mb-3"
@@ -220,23 +331,104 @@
                   <div>
                     <h2 class="h3 mb-2">Seu próximo passo começa aqui</h2>
                     <p class="text-body-secondary mb-0">
-                      Deixe seu nome e telefone. Eu entro em contato para explicar como o
-                      bootcamp funciona.
+                      Informe seu nome e WhatsApp. Vou entrar em contato para explicar
+                      como o bootcamp funciona.
                     </p>
                   </div>
                 </div>
-                <div class="glass form-frame">
-                  <iframe
-                    class="hform-1 hform-md-2 hform-lg-3"
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSeC5qoa5echE7JwCRh4OlxejpJqkqQGQ7lIUBendcmzC4F0AQ/viewform?embedded=true"
-                    title="Formulário de interesse no bootcamp"
-                    frameborder="0"
-                    marginheight="0"
-                    marginwidth="0"
-                    loading="lazy"
-                    >Carregando…</iframe
-                  >
-                </div>
+                <form
+                  class="lead-form"
+                  name="interesse-bootcamp"
+                  method="POST"
+                  action="/obrigado.html"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                >
+                  <input type="hidden" name="form-name" value="interesse-bootcamp" />
+                  <div class="visually-hidden" aria-hidden="true">
+                    <label for="bot-field">Não preencha este campo</label>
+                    <input
+                      id="bot-field"
+                      name="bot-field"
+                      tabindex="-1"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                      <label class="form-label" for="lead-name">Seu nome</label>
+                      <input
+                        class="form-control"
+                        id="lead-name"
+                        name="nome"
+                        type="text"
+                        autocomplete="name"
+                        maxlength="100"
+                        required
+                      />
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label class="form-label" for="lead-whatsapp"
+                        >WhatsApp com DDD</label
+                      >
+                      <input
+                        class="form-control"
+                        id="lead-whatsapp"
+                        name="whatsapp"
+                        type="tel"
+                        autocomplete="tel"
+                        inputmode="tel"
+                        aria-describedby="lead-whatsapp-help"
+                        placeholder="(00) 91234-5678"
+                        pattern="\(\d{2}\) \d{4,5}-\d{4}"
+                        title="Informe um telefone com DDD, com 10 ou 11 dígitos."
+                        maxlength="15"
+                        required
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label" for="lead-referrer">
+                        Nome completo de quem fez a indicação
+                        <span class="text-body-secondary">(opcional)</span>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="lead-referrer"
+                        name="nome-indicacao"
+                        type="text"
+                        autocomplete="off"
+                        maxlength="120"
+                        placeholder="Preencha este campo se alguém indicou o bootcamp."
+                      />
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          id="lead-consent"
+                          name="consentimento"
+                          type="checkbox"
+                          value="Autorizo contato via WhatsApp sobre o Bootcamp Full Stack"
+                          required
+                        />
+                        <label class="form-check-label" for="lead-consent">
+                          Autorizo o contato via WhatsApp para receber informações sobre o
+                          bootcamp.
+                        </label>
+                      </div>
+                      <p class="form-text mb-0 mt-2">
+                        Usaremos seus dados somente para responder ao seu interesse no
+                        Bootcamp Full Stack.
+                      </p>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-neon btn-lg" type="submit">
+                        Quero saber mais
+                        <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>

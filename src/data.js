@@ -338,20 +338,29 @@ export const BLOCKS = [
 ];
 
 export const TERMINAL = [
-  { cmd: 'mkdir meu-app && cd meu-app', out: 'Terminal e sistema de arquivos' },
-  { cmd: 'git init', out: 'Versionamento com Git e GitHub' },
-  { cmd: 'npm create vite@latest', out: 'Front-end com React' },
-  { cmd: 'node server.js', out: 'API REST no ar' },
-  { cmd: 'npx sequelize-cli db:migrate', out: 'Banco de dados modelado' },
-  { out: '✔ Do terminal ao deploy.', done: true },
-];
-
-export const GOALS = [
-  'Entender como a Web funciona',
-  'Aplicar boas práticas de código',
-  'Construir aplicações Front-end modernas com React Hooks e Context API',
-  'Desenvolver APIs REST',
-  'Implementar autenticação e boas práticas de segurança da informação',
-  'Modelar bancos relacionais (PostgreSQL) e não relacionais (MongoDB)',
-  'Publicar suas aplicações no ar',
+  {
+    cmd: 'cat ./convite.txt',
+    out: 'Estuda na área de tecnologia e quer transformar os conceitos da faculdade em aplicações reais e aumentar suas chances de conquistar uma vaga?',
+    tone: 'cyan',
+  },
+  {
+    cmd: 'cat ./projetos.txt',
+    out: 'Neste bootcamp, você desenvolve projetos em cada etapa e aprende, na prática, a criar aplicações completas.',
+    tone: 'violet',
+  },
+  {
+    cmd: 'git status --short',
+    out: 'Fundamentos sólidos. Projetos reais. Evolução constante.',
+    tone: 'green',
+  },
+  {
+    cmd: 'npm run full-stack',
+    out: 'Interface, API e banco de dados: tudo se conecta.',
+    tone: 'amber',
+  },
+  {
+    cmd: 'git log --oneline --max-count=3',
+    out: 'Aprenda praticando: do primeiro comando à aplicação no ar.',
+    tone: 'blue',
+  },
 ];
