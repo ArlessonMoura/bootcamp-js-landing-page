@@ -12,6 +12,7 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (reduce) document.documentElement.classList.add('reduce-motion');
 
 const logoSrc = (id) => `${base}logos/${id}.png`;
+const avatarSrc = (filename) => `${base}img/${filename}`;
 
 /* ---------- galeria do hero ---------- */
 $('#gallery').innerHTML = GALLERY.map(
@@ -142,6 +143,56 @@ whatsappInput.addEventListener('input', () => {
   whatsappInput.setSelectionRange(nextCursor, nextCursor);
 });
 
+/* ---------- reações do avatar no formulário ---------- */
+const leadForm = $('form[name="interesse-bootcamp"]');
+const leadPanel = leadForm.closest('.glass');
+const leadAvatar = $('#lead-avatar');
+const setLeadAvatar = (filename, description) => {
+  leadAvatar.src = avatarSrc(filename);
+  leadAvatar.alt = `Avatar ${description}`;
+  leadAvatar.classList.toggle('avatar--pose', filename !== 'call-me.png');
+};
+
+const focusReactions = {
+  'lead-name': ['thinking.png', 'pensando enquanto você se apresenta'],
+  'lead-whatsapp': ['happy.png', 'sorrindo enquanto você informa o WhatsApp'],
+  'lead-referrer': ['shy.png', 'com expressão tímida ao perguntar quem indicou o curso'],
+};
+
+leadPanel.addEventListener('focusin', (event) => {
+  const reaction = focusReactions[event.target.id];
+  if (reaction) setLeadAvatar(...reaction);
+});
+
+leadForm.addEventListener('change', (event) => {
+  if (event.target.id !== 'lead-consent') return;
+  setLeadAvatar(
+    event.target.checked ? 'promisse.png' : 'desaprove.png',
+    event.target.checked
+      ? 'fazendo um sinal de compromisso'
+      : 'lembrando do consentimento',
+  );
+});
+
+leadForm.addEventListener(
+  'invalid',
+  (event) => {
+    const invalidPhone =
+      event.target.id === 'lead-whatsapp' && event.target.validity.patternMismatch;
+    setLeadAvatar(
+      invalidPhone ? 'furious.png' : 'desaprove.png',
+      invalidPhone
+        ? 'reagindo dramaticamente ao telefone incompleto'
+        : 'indicando que falta preencher um campo',
+    );
+  },
+  true,
+);
+
+leadForm.addEventListener('submit', () => {
+  setLeadAvatar('aprove.png', 'aprovando o envio do formulário');
+});
+
 /* ---------- menu mobile fecha ao escolher um link ---------- */
 const menu = $('#menu');
 menu.addEventListener('click', (e) => {
@@ -151,6 +202,7 @@ menu.addEventListener('click', (e) => {
 
 /* ---------- terminal do hero ---------- */
 const term = $('#term');
+const termAvatar = $('#term-avatar');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const line = (cls = '') => {
   const el = document.createElement('span');
@@ -167,6 +219,7 @@ async function runTerminal() {
   while (true) {
     const message = TERMINAL[messageIndex];
     term.replaceChildren();
+    termAvatar.src = avatarSrc(message.avatar);
 
     const status = line('term-status');
     status.innerHTML =

@@ -250,6 +250,19 @@ a {
     'MesloLGS NF', 'MesloLGS Nerd Font Mono', 'MesloLGS Nerd Font', ui-monospace,
     SFMono-Regular, Menlo, Consolas, monospace;
 }
+.term-content {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+.term-avatar {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  flex: none;
+  object-fit: contain;
+  filter: drop-shadow(0 0.6rem 0.8rem rgba(0, 0, 0, 0.45));
+}
 .term-status {
   display: flex;
   flex-wrap: wrap;
@@ -671,9 +684,20 @@ a {
 }
 .avatar {
   width: 6.5rem;
-  height: auto;
+  height: 6.5rem;
   flex: none;
+  object-fit: contain;
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.5));
+  transition: transform 0.2s;
+}
+.avatar--pose {
+  transform: scale(1.14);
+}
+.avatar:hover {
+  transform: rotate(-4deg) scale(1.04);
+}
+.avatar--pose:hover {
+  transform: rotate(-4deg) scale(1.18);
 }
 
 // ---------- WhatsApp flutuante ----------

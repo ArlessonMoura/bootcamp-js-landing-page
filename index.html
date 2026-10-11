@@ -51,7 +51,7 @@
         <div
           class="glass nav-glass w-100 d-flex flex-wrap align-items-center justify-content-between px-3 py-2"
         >
-          <a class="navbar-brand m-0 fw-semibold" href="#topo"> Bootcamp Full Stack </a>
+          <a class="navbar-brand m-0 fw-semibold" href="#topo"> Do Terminal ao Deploy </a>
           <button
             class="navbar-toggler border-0"
             type="button"
@@ -109,7 +109,20 @@
                 aria-label="Terminal com a apresentação do Bootcamp Full Stack"
               >
                 <div class="term-bar"><i></i><i></i><i></i><span>~/meu-app</span></div>
-                <div class="term-body" id="term"></div>
+                <div
+                  class="term-body d-flex flex-column flex-sm-row align-items-center gap-3"
+                >
+                  <div id="term" class="term-content"></div>
+                  <img
+                    id="term-avatar"
+                    class="term-avatar"
+                    src="./img/genious-idea.png"
+                    width="96"
+                    height="96"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -317,18 +330,17 @@
           <div class="row g-4 g-lg-5 align-items-start">
             <div class="col-12">
               <div class="glass p-3 p-md-4">
-                <div
-                  class="d-flex flex-column flex-sm-row align-items-sm-center gap-3 mb-3"
-                >
+                <div class="d-flex flex-column flex-sm-row align-items-center gap-3 mb-3">
                   <img
                     class="avatar"
+                    id="lead-avatar"
                     src="/img/call-me.png"
                     alt="Avatar do instrutor fazendo o gesto de telefone"
                     width="360"
                     height="338"
                     loading="lazy"
                   />
-                  <div>
+                  <div class="text-center text-sm-start">
                     <h2 class="h3 mb-2">Seu próximo passo começa aqui</h2>
                     <p class="text-body-secondary mb-0">
                       Informe seu nome e WhatsApp. Vou entrar em contato para explicar
@@ -420,10 +432,12 @@
                       </p>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-neon btn-lg" type="submit">
-                        Quero saber mais
-                        <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
-                      </button>
+                      <div class="d-flex justify-content-center justify-content-md-start">
+                        <button class="btn btn-neon btn-lg" type="submit">
+                          Quero saber mais
+                          <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </form>
