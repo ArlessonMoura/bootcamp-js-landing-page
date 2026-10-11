@@ -3,6 +3,7 @@ import '@fontsource-variable/unbounded';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Collapse from 'bootstrap/js/dist/collapse';
 import Modal from 'bootstrap/js/dist/modal';
+import 'bootstrap/js/dist/tab';
 import { WHATSAPP_MESSAGE, WHATSAPP_NUMBER } from './config.js';
 import { BLOCKS, GALLERY, LOGOS, TERMINAL } from './data.js';
 import './styles/main.scss';
