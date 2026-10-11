@@ -6,7 +6,7 @@
     <title>Bootcamp Full Stack: do terminal ao deploy</title>
     <meta
       name="description"
-      content="Fundamentos, Front-end e Back-end em 9 meses, com projetos em cada etapa. R$ 170 por mês."
+      content="Fundamentos, Front-end e Back-end em 9 meses, com projetos em cada etapa. Mensalidades a partir de R$ 170."
     />
     <meta name="theme-color" content="#04061a" />
     <link rel="canonical" href="https://bootcampjs.netlify.app/" />
@@ -163,12 +163,12 @@
             <div class="col-12 col-lg-8">
               <h2 class="display-6 fw-bold">Como funciona</h2>
               <p class="lead text-body-secondary mt-3">
-                Mensalidade fixa e regras claras desde o início.
+                Carga horária, valor e formato definidos conforme a turma.
               </p>
             </div>
           </div>
           <div
-            class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3 mt-2 d-none d-md-flex"
+            class="row row-cols-1 row-cols-md-2 row-cols-xl-5 g-3 mt-2 d-none d-md-flex"
           >
             <div class="col">
               <div class="glass cond h-100">
@@ -184,10 +184,12 @@
             <div class="col">
               <div class="glass cond h-100">
                 <span class="mod-ico mb-3"><i class="bi bi-credit-card"></i></span>
-                <p class="cond-value mb-2 text-body">R$ 170 por mês</p>
+                <p class="cond-value mb-2 text-body">A partir de R$ 170/mês</p>
                 <p class="mb-0">
-                  Aceito cartão com pagamento recorrente: cada mensalidade é cobrada
-                  separadamente e não compromete o limite do cartão.
+                  O valor pode variar conforme o tamanho da turma, a quantidade e a
+                  distribuição das aulas. Turmas menores, mais horas por semana ou por dia
+                  e horários especiais durante a semana podem ter valor maior. Aulas aos
+                  fins de semana têm valor maior.
                 </p>
               </div>
             </div>
@@ -204,11 +206,18 @@
             <div class="col">
               <div class="glass cond h-100">
                 <span class="mod-ico mb-3"><i class="bi bi-people"></i></span>
-                <p class="cond-value mb-2 text-body">Turma com 20 alunos</p>
+                <p class="cond-value mb-2 text-body">Turmas de 20 a 30 alunos</p>
                 <p class="mb-0">
-                  Se desistências deixarem a turma com menos de 20 alunos, o curso pode
-                  ser cancelado.
+                  O ideal é ter 20 alunos, com limite de 30. Turmas maiores podem ser
+                  formadas mediante acordo.
                 </p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="glass cond h-100">
+                <span class="mod-ico mb-3"><i class="bi bi-clock"></i></span>
+                <p class="cond-value mb-2 text-body">4 horas por semana</p>
+                <p class="mb-0">Aulas com carga horária mínima de 4 horas por semana.</p>
               </div>
             </div>
           </div>
@@ -254,7 +263,7 @@
                   aria-controls="condition-price"
                 >
                   <i class="bi bi-credit-card mod-ico" aria-hidden="true"></i>
-                  <span>R$ 170 por mês</span>
+                  <span>A partir de R$ 170/mês</span>
                 </button>
               </h3>
               <div
@@ -264,8 +273,10 @@
                 data-bs-parent="#conditionsAccordion"
               >
                 <div class="accordion-body">
-                  Aceito cartão com pagamento recorrente: cada mensalidade é cobrada
-                  separadamente e não compromete o limite do cartão.
+                  O valor pode variar conforme o tamanho da turma, a quantidade e a
+                  distribuição das aulas. Turmas menores, mais horas por semana ou por dia
+                  e horários especiais durante a semana podem ter valor maior. Aulas aos
+                  fins de semana têm valor maior.
                 </div>
               </div>
             </div>
@@ -306,7 +317,7 @@
                   aria-controls="condition-class"
                 >
                   <i class="bi bi-people mod-ico" aria-hidden="true"></i>
-                  <span>Turma com 20 alunos</span>
+                  <span>Turmas de 20 a 30 alunos</span>
                 </button>
               </h3>
               <div
@@ -316,8 +327,33 @@
                 data-bs-parent="#conditionsAccordion"
               >
                 <div class="accordion-body">
-                  Se desistências deixarem a turma com menos de 20 alunos, o curso pode
-                  ser cancelado.
+                  O ideal é ter 20 alunos, com limite de 30. Turmas maiores podem ser
+                  formadas mediante acordo.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="condition-hours-heading">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#condition-hours"
+                  aria-expanded="false"
+                  aria-controls="condition-hours"
+                >
+                  <i class="bi bi-clock mod-ico" aria-hidden="true"></i>
+                  <span>4 horas por semana</span>
+                </button>
+              </h3>
+              <div
+                id="condition-hours"
+                class="accordion-collapse collapse"
+                aria-labelledby="condition-hours-heading"
+                data-bs-parent="#conditionsAccordion"
+              >
+                <div class="accordion-body">
+                  Aulas com carga horária mínima de 4 horas por semana.
                 </div>
               </div>
             </div>
@@ -352,7 +388,7 @@
                   class="lead-form"
                   name="interesse-bootcamp"
                   method="POST"
-                  action="/inscricao-recebida.html"
+                  action="/"
                   data-netlify="true"
                   netlify-honeypot="bot-field"
                 >
@@ -432,6 +468,16 @@
                       </p>
                     </div>
                     <div class="col-12">
+                      <p
+                        id="lead-error"
+                        class="alert alert-danger d-none mb-0"
+                        role="alert"
+                      >
+                        Não foi possível enviar sua inscrição. Verifique sua conexão e
+                        tente novamente.
+                      </p>
+                    </div>
+                    <div class="col-12">
                       <div class="d-flex justify-content-center justify-content-md-start">
                         <button class="btn btn-neon btn-lg" type="submit">
                           Quero saber mais
@@ -447,6 +493,33 @@
         </div>
       </section>
     </main>
+
+    <div
+      class="modal fade"
+      id="submission-success"
+      tabindex="-1"
+      aria-labelledby="submission-success-title"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content glass text-center p-4">
+          <img
+            class="avatar avatar--pose mx-auto mb-3"
+            src="/img/wink.png"
+            alt="Avatar piscando em sinal de incentivo"
+            width="180"
+            height="169"
+          />
+          <h2 class="h3" id="submission-success-title">Recebemos seu interesse!</h2>
+          <p class="text-body-secondary mb-4">
+            Obrigado. Em breve entraremos em contato pelo WhatsApp informado.
+          </p>
+          <button class="btn btn-neon" type="button" data-bs-dismiss="modal">
+            Fechar
+          </button>
+        </div>
+      </div>
+    </div>
 
     <footer class="text-center text-body-secondary py-4 pb-5">Per Aspera Ad Astra</footer>
 

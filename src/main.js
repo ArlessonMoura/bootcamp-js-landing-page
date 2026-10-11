@@ -2,6 +2,7 @@ import '@fontsource-variable/hanken-grotesk';
 import '@fontsource-variable/unbounded';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Collapse from 'bootstrap/js/dist/collapse';
+import Modal from 'bootstrap/js/dist/modal';
 import { WHATSAPP_MESSAGE, WHATSAPP_NUMBER } from './config.js';
 import { BLOCKS, GALLERY, LOGOS, TERMINAL } from './data.js';
 import './styles/main.scss';
@@ -147,6 +148,10 @@ whatsappInput.addEventListener('input', () => {
 const leadForm = $('form[name="interesse-bootcamp"]');
 const leadPanel = leadForm.closest('.glass');
 const leadAvatar = $('#lead-avatar');
+const leadError = $('#lead-error');
+const submissionModalElement = $('#submission-success');
+const submissionModal = new Modal(submissionModalElement);
+const submitButton = leadForm.querySelector('[type="submit"]');
 const setLeadAvatar = (filename, description) => {
   leadAvatar.src = avatarSrc(filename);
   leadAvatar.alt = `Avatar ${description}`;
@@ -189,8 +194,33 @@ leadForm.addEventListener(
   true,
 );
 
-leadForm.addEventListener('submit', () => {
+leadForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
   setLeadAvatar('aprove.png', 'aprovando o envio do formulário');
+  leadError.classList.add('d-none');
+  submitButton.disabled = true;
+  leadForm.setAttribute('aria-busy', 'true');
+
+  try {
+    const response = await fetch(leadForm.action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(leadForm)).toString(),
+    });
+    if (!response.ok) throw new Error('Form submission failed');
+    submissionModal.show();
+  } catch {
+    leadError.classList.remove('d-none');
+  } finally {
+    submitButton.disabled = false;
+    leadForm.removeAttribute('aria-busy');
+  }
+});
+
+submissionModalElement.addEventListener('hidden.bs.modal', () => {
+  leadForm.reset();
+  leadError.classList.add('d-none');
+  setLeadAvatar('call-me.png', 'fazendo o gesto de telefone');
 });
 
 /* ---------- menu mobile fecha ao escolher um link ---------- */
