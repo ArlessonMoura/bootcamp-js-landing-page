@@ -614,20 +614,22 @@ a {
   align-items: center;
   gap: 0.5rem;
   max-width: 100%;
-  border-color: transparent;
+  border-color: var(--line);
   border-radius: 0.7rem 0.7rem 0 0;
-  color: var(--bs-body-secondary-color);
+  color: var(--bs-body-color);
+  background: rgba(255, 255, 255, 0.04);
   font-weight: 600;
   white-space: normal;
 }
 .conditions-tabs .nav-link:hover {
-  border-color: var(--line) var(--line) transparent;
+  border-color: var(--neon-cy) var(--neon-cy) transparent;
   color: var(--bs-body-color);
+  background: rgba(53, 230, 255, 0.08);
 }
 .conditions-tabs .nav-link.active {
   color: var(--bs-body-color);
-  background: rgba(53, 230, 255, 0.08);
-  border-color: var(--line) var(--line) transparent;
+  background: rgba(53, 230, 255, 0.22);
+  border-color: var(--neon-cy) var(--neon-cy) transparent;
 }
 .conditions-tabs .nav-link:focus-visible {
   outline: 3px solid var(--neon-cy);
