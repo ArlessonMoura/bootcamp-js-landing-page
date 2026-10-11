@@ -167,191 +167,150 @@
               </p>
             </div>
           </div>
-          <div
-            class="row row-cols-1 row-cols-md-2 row-cols-xl-5 g-3 mt-2 d-none d-md-flex"
+          <ul
+            class="nav nav-tabs conditions-tabs flex-wrap mt-3"
+            role="tablist"
+            aria-label="Condições do bootcamp"
           >
-            <div class="col">
-              <div class="glass cond h-100">
-                <span class="mod-ico mb-3"><i class="bi bi-calendar-range"></i></span>
-                <p class="cond-value mb-2 text-body">9 meses</p>
-                <p class="mb-0">
-                  Passando de 9 meses por motivos do professor, as aulas continuam e não é
-                  cobrado o mês extra. Se a turma render mais rápido, o curso termina
-                  antes e as mensalidades também.
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <div class="glass cond h-100">
-                <span class="mod-ico mb-3"><i class="bi bi-credit-card"></i></span>
-                <p class="cond-value mb-2 text-body">A partir de R$ 170/mês</p>
-                <p class="mb-0">
-                  O valor pode variar conforme o tamanho da turma, a quantidade e a
-                  distribuição das aulas, ex: Turmas menores, mais horas por semana ou por
-                  dia e horários concorridos.
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <div class="glass cond h-100">
-                <span class="mod-ico mb-3"><i class="bi bi-person-plus"></i></span>
-                <p class="cond-value mb-2 text-body">Desconto por indicações</p>
-                <p class="mb-0">
-                  A cada 2 pessoas indicadas, você ganha R$ 20 de desconto.
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <div class="glass cond h-100">
-                <span class="mod-ico mb-3"><i class="bi bi-people"></i></span>
-                <p class="cond-value mb-2 text-body">Turmas de 20 a 30 alunos</p>
-                <p class="mb-0">
-                  O ideal é ter 20 alunos, com limite de 30. Turmas maiores podem ser
-                  formadas mediante acordo.
-                </p>
-              </div>
-            </div>
-            <div class="col">
-              <div class="glass cond h-100">
-                <span class="mod-ico mb-3"><i class="bi bi-clock"></i></span>
-                <p class="cond-value mb-2 text-body">4 horas por semana</p>
-                <p class="mb-0">Aulas com carga horária mínima de 4 horas por semana.</p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="accordion conditions-accordion mt-3 d-md-none"
-            id="conditionsAccordion"
-          >
-            <div class="accordion-item">
-              <h3 class="accordion-header" id="condition-duration-heading">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#condition-duration"
-                  aria-expanded="false"
-                  aria-controls="condition-duration"
-                >
-                  <i class="bi bi-calendar-range mod-ico" aria-hidden="true"></i>
-                  <span>9 meses</span>
-                </button>
-              </h3>
-              <div
-                id="condition-duration"
-                class="accordion-collapse collapse"
-                aria-labelledby="condition-duration-heading"
-                data-bs-parent="#conditionsAccordion"
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="condition-duration-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#condition-duration-panel"
+                type="button"
+                role="tab"
+                aria-controls="condition-duration-panel"
+                aria-selected="true"
               >
-                <div class="accordion-body">
-                  Passando de 9 meses por motivos do professor, as aulas continuam e não é
-                  cobrado o mês extra. Se a turma render mais rápido, o curso termina
-                  antes e as mensalidades também.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h3 class="accordion-header" id="condition-price-heading">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#condition-price"
-                  aria-expanded="false"
-                  aria-controls="condition-price"
-                >
-                  <i class="bi bi-credit-card mod-ico" aria-hidden="true"></i>
-                  <span>A partir de R$ 170/mês</span>
-                </button>
-              </h3>
-              <div
-                id="condition-price"
-                class="accordion-collapse collapse"
-                aria-labelledby="condition-price-heading"
-                data-bs-parent="#conditionsAccordion"
+                <i class="bi bi-calendar-range" aria-hidden="true"></i> 9 meses
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="condition-price-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#condition-price-panel"
+                type="button"
+                role="tab"
+                aria-controls="condition-price-panel"
+                aria-selected="false"
+                tabindex="-1"
               >
-                <div class="accordion-body">
-                  O valor pode variar conforme o tamanho da turma, a quantidade e a
-                  distribuição das aulas, ex: Turmas menores, mais horas por semana ou por
-                  dia e horários concorridos.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h3 class="accordion-header" id="condition-referral-heading">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#condition-referral"
-                  aria-expanded="false"
-                  aria-controls="condition-referral"
-                >
-                  <i class="bi bi-person-plus mod-ico" aria-hidden="true"></i>
-                  <span>Descontos por indicações</span>
-                </button>
-              </h3>
-              <div
-                id="condition-referral"
-                class="accordion-collapse collapse"
-                aria-labelledby="condition-referral-heading"
-                data-bs-parent="#conditionsAccordion"
+                <i class="bi bi-credit-card" aria-hidden="true"></i> A partir de R$
+                170/mês
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="condition-referral-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#condition-referral-panel"
+                type="button"
+                role="tab"
+                aria-controls="condition-referral-panel"
+                aria-selected="false"
+                tabindex="-1"
               >
-                <div class="accordion-body">
-                  A cada 2 pessoas indicadas, você ganha R$ 20 de desconto.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h3 class="accordion-header" id="condition-class-heading">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#condition-class"
-                  aria-expanded="false"
-                  aria-controls="condition-class"
-                >
-                  <i class="bi bi-people mod-ico" aria-hidden="true"></i>
-                  <span>Turmas de 20 a 30 alunos</span>
-                </button>
-              </h3>
-              <div
-                id="condition-class"
-                class="accordion-collapse collapse"
-                aria-labelledby="condition-class-heading"
-                data-bs-parent="#conditionsAccordion"
+                <i class="bi bi-person-plus" aria-hidden="true"></i> Indicações
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="condition-class-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#condition-class-panel"
+                type="button"
+                role="tab"
+                aria-controls="condition-class-panel"
+                aria-selected="false"
+                tabindex="-1"
               >
-                <div class="accordion-body">
-                  O ideal é ter 20 alunos, com limite de 30. Turmas maiores podem ser
-                  formadas mediante acordo.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h3 class="accordion-header" id="condition-hours-heading">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#condition-hours"
-                  aria-expanded="false"
-                  aria-controls="condition-hours"
-                >
-                  <i class="bi bi-clock mod-ico" aria-hidden="true"></i>
-                  <span>4 horas por semana</span>
-                </button>
-              </h3>
-              <div
-                id="condition-hours"
-                class="accordion-collapse collapse"
-                aria-labelledby="condition-hours-heading"
-                data-bs-parent="#conditionsAccordion"
+                <i class="bi bi-people" aria-hidden="true"></i> Turmas
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="condition-hours-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#condition-hours-panel"
+                type="button"
+                role="tab"
+                aria-controls="condition-hours-panel"
+                aria-selected="false"
+                tabindex="-1"
               >
-                <div class="accordion-body">
-                  Aulas com carga horária mínima de 4 horas por semana.
-                </div>
-              </div>
+                <i class="bi bi-clock" aria-hidden="true"></i> Carga horária
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content conditions-tab-content">
+            <div
+              class="tab-pane fade show active conditions-tab-panel"
+              id="condition-duration-panel"
+              role="tabpanel"
+              aria-labelledby="condition-duration-tab"
+              tabindex="0"
+            >
+              <h3 class="h5 mb-2">Duração do curso</h3>
+              <p class="mb-0">
+                Passando de 9 meses por motivos do professor, as aulas continuam e não é
+                cobrado o mês extra. Se a turma render mais rápido, o curso termina antes
+                e as mensalidades também.
+              </p>
+            </div>
+            <div
+              class="tab-pane fade conditions-tab-panel"
+              id="condition-price-panel"
+              role="tabpanel"
+              aria-labelledby="condition-price-tab"
+              tabindex="0"
+            >
+              <h3 class="h5 mb-2">Mensalidade a partir de R$ 170</h3>
+              <p class="mb-0">
+                O valor pode variar conforme o tamanho da turma, a quantidade e a
+                distribuição das aulas, ex: Turmas menores, mais horas por semana ou por
+                dia e horários concorridos.
+              </p>
+            </div>
+            <div
+              class="tab-pane fade conditions-tab-panel"
+              id="condition-referral-panel"
+              role="tabpanel"
+              aria-labelledby="condition-referral-tab"
+              tabindex="0"
+            >
+              <h3 class="h5 mb-2">Desconto por indicações</h3>
+              <p class="mb-0">
+                A cada 2 pessoas indicadas, você ganha R$ 20 de desconto.
+              </p>
+            </div>
+            <div
+              class="tab-pane fade conditions-tab-panel"
+              id="condition-class-panel"
+              role="tabpanel"
+              aria-labelledby="condition-class-tab"
+              tabindex="0"
+            >
+              <h3 class="h5 mb-2">Turmas de 20 a 30 alunos</h3>
+              <p class="mb-0">
+                O ideal é ter 20 alunos, com limite de 30. Turmas maiores podem ser
+                formadas mediante acordo.
+              </p>
+            </div>
+            <div
+              class="tab-pane fade conditions-tab-panel"
+              id="condition-hours-panel"
+              role="tabpanel"
+              aria-labelledby="condition-hours-tab"
+              tabindex="0"
+            >
+              <h3 class="h5 mb-2">4 horas por semana</h3>
+              <p class="mb-0">Aulas com carga horária mínima de 4 horas por semana.</p>
             </div>
           </div>
         </div>

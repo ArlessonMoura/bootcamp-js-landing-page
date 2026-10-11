@@ -605,35 +605,38 @@ a {
 .cond p {
   color: var(--bs-body-secondary-color);
 }
-.conditions-accordion {
-  --bs-accordion-bg: transparent;
-  --bs-accordion-color: var(--bs-body-color);
-  --bs-accordion-border-width: 0;
-  --bs-accordion-btn-bg: transparent;
-  --bs-accordion-btn-color: var(--bs-body-color);
-  --bs-accordion-active-bg: rgba(53, 230, 255, 0.08);
-  --bs-accordion-active-color: var(--bs-body-color);
-  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(53, 230, 255, 0.4);
+.conditions-tabs {
+  gap: 0.35rem;
+  border-bottom-color: var(--line);
 }
-.conditions-accordion .accordion-item {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 0.9rem;
-  background: linear-gradient(
-    150deg,
-    rgba(255, 255, 255, 0.12),
-    rgba(255, 255, 255, 0.03) 55%,
-    rgba(120, 150, 255, 0.07)
-  );
-}
-.conditions-accordion .accordion-button {
-  gap: 0.9rem;
+.conditions-tabs .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 100%;
+  border-color: transparent;
+  border-radius: 0.7rem 0.7rem 0 0;
+  color: var(--bs-body-secondary-color);
   font-weight: 600;
+  white-space: normal;
 }
-.conditions-accordion .accordion-button:not(.collapsed) {
+.conditions-tabs .nav-link:hover {
+  border-color: var(--line) var(--line) transparent;
+  color: var(--bs-body-color);
+}
+.conditions-tabs .nav-link.active {
+  color: var(--bs-body-color);
+  background: rgba(53, 230, 255, 0.08);
+  border-color: var(--line) var(--line) transparent;
+}
+.conditions-tabs .nav-link:focus-visible {
+  outline: 3px solid var(--neon-cy);
+  outline-offset: 2px;
   box-shadow: none;
 }
-.conditions-accordion .accordion-body {
+.conditions-tab-panel {
+  min-height: 8rem;
+  padding: 1.25rem 0;
   color: var(--bs-body-secondary-color);
 }
 
