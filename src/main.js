@@ -2,7 +2,6 @@ import '@fontsource-variable/hanken-grotesk';
 import '@fontsource-variable/unbounded';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Collapse from 'bootstrap/js/dist/collapse';
-import Modal from 'bootstrap/js/dist/modal';
 import 'bootstrap/js/dist/tab';
 import { WHATSAPP_MESSAGE, WHATSAPP_NUMBER } from './config.js';
 import { BLOCKS, GALLERY, LOGOS, TERMINAL } from './data.js';
@@ -145,71 +144,35 @@ whatsappInput.addEventListener('input', () => {
   whatsappInput.setSelectionRange(nextCursor, nextCursor);
 });
 
-/* ---------- reações do avatar no formulário ---------- */
+/* ---------- envio do formulário ---------- */
 const leadForm = $('form[name="interesse-bootcamp"]');
-const leadPanel = leadForm.closest('.glass');
-const leadAvatar = $('#lead-avatar');
 const leadError = $('#lead-error');
-const submissionModalElement = $('#submission-success');
-const submissionModal = new Modal(submissionModalElement);
+const leadIntro = $('#lead-intro');
+const leadSuccess = $('#lead-success');
+const leadPreviewNote = $('#lead-preview-note');
 const submitButton = leadForm.querySelector('[type="submit"]');
-const setLeadAvatar = (filename, description) => {
-  leadAvatar.src = avatarSrc(filename);
-  leadAvatar.alt = `Avatar ${description}`;
-  leadAvatar.classList.toggle('avatar--pose', filename !== 'call-me.png');
-};
-
-const focusReactions = {
-  'lead-name': ['thinking.png', 'pensando enquanto você se apresenta'],
-  'lead-whatsapp': ['happy.png', 'sorrindo enquanto você informa o WhatsApp'],
-  'lead-referrer': ['shy.png', 'com expressão tímida ao perguntar quem indicou o curso'],
-};
-
-leadPanel.addEventListener('focusin', (event) => {
-  const reaction = focusReactions[event.target.id];
-  if (reaction) setLeadAvatar(...reaction);
-});
-
-leadForm.addEventListener('change', (event) => {
-  if (event.target.id !== 'lead-consent') return;
-  setLeadAvatar(
-    event.target.checked ? 'promisse.png' : 'desaprove.png',
-    event.target.checked
-      ? 'fazendo um sinal de compromisso'
-      : 'lembrando do consentimento',
-  );
-});
-
-leadForm.addEventListener(
-  'invalid',
-  (event) => {
-    const invalidPhone =
-      event.target.id === 'lead-whatsapp' && event.target.validity.patternMismatch;
-    setLeadAvatar(
-      invalidPhone ? 'furious.png' : 'desaprove.png',
-      invalidPhone
-        ? 'reagindo dramaticamente ao telefone incompleto'
-        : 'indicando que falta preencher um campo',
-    );
-  },
-  true,
-);
 
 leadForm.addEventListener('submit', async (event) => {
   event.preventDefault();
-  setLeadAvatar('aprove.png', 'aprovando o envio do formulário');
   leadError.classList.add('d-none');
   submitButton.disabled = true;
   leadForm.setAttribute('aria-busy', 'true');
 
   try {
-    const response = await fetch(leadForm.action, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(leadForm)).toString(),
-    });
-    if (!response.ok) throw new Error('Form submission failed');
-    submissionModal.show();
+    if (import.meta.env.DEV) {
+      leadPreviewNote.classList.remove('d-none');
+    } else {
+      const response = await fetch(leadForm.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(leadForm)).toString(),
+      });
+      if (!response.ok) throw new Error('Form submission failed');
+    }
+    leadIntro.classList.add('d-none');
+    leadForm.classList.add('d-none');
+    leadSuccess.classList.remove('d-none');
+    $('#lead-success-title').focus();
   } catch {
     leadError.classList.remove('d-none');
   } finally {
@@ -218,10 +181,14 @@ leadForm.addEventListener('submit', async (event) => {
   }
 });
 
-submissionModalElement.addEventListener('hidden.bs.modal', () => {
+$('#lead-new-proposal').addEventListener('click', () => {
   leadForm.reset();
   leadError.classList.add('d-none');
-  setLeadAvatar('call-me.png', 'fazendo o gesto de telefone');
+  leadPreviewNote.classList.add('d-none');
+  leadIntro.classList.remove('d-none');
+  leadForm.classList.remove('d-none');
+  leadSuccess.classList.add('d-none');
+  $('#lead-heading').focus();
 });
 
 /* ---------- menu mobile fecha ao escolher um link ---------- */

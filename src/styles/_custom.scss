@@ -1,7 +1,6 @@
 :root {
   --neon-cy: #35e6ff;
   --neon-vi: #8f6bff;
-  --neon-mg: #ff5ad9;
   --wa: #25d366;
   --line: rgba(255, 255, 255, 0.2);
   --ink-dark: #04061a;
@@ -105,27 +104,6 @@ a {
     box-shadow:
       0 14px 46px -6px rgba(143, 107, 255, 0.95),
       inset 0 1px 0 rgba(255, 255, 255, 0.5);
-  }
-}
-
-.btn-glass {
-  --bs-btn-color: var(--bs-body-color);
-  --bs-btn-hover-color: var(--bs-body-color);
-  --bs-btn-border-radius: 0.9rem;
-  --bs-btn-font-weight: 600;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid var(--line);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  transition:
-    transform 0.2s,
-    border-color 0.2s,
-    background 0.2s;
-
-  &:hover {
-    transform: translateY(-2px);
-    border-color: var(--neon-cy);
-    background: rgba(53, 230, 255, 0.12);
   }
 }
 
@@ -320,10 +298,6 @@ a {
 }
 .ln.out.tone-blue {
   color: #93c5fd;
-}
-.ln.out.done {
-  color: #4ade80;
-  font-weight: 700;
 }
 .caret {
   display: inline-block;
@@ -593,18 +567,6 @@ a {
 }
 
 // ---------- condições ----------
-.cond {
-  padding: 1.5rem;
-}
-.cond-value {
-  font-family: var(--bs-heading-font-family);
-  font-weight: 600;
-  font-size: clamp(1.4rem, 3vw, 1.75rem);
-  line-height: 1.1;
-}
-.cond p {
-  color: var(--bs-body-secondary-color);
-}
 .conditions-tabs {
   gap: 0.35rem;
   border-bottom-color: var(--line);
@@ -642,25 +604,6 @@ a {
   color: var(--bs-body-secondary-color);
 }
 
-// ---------- CTA ----------
-.goals li {
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
-  padding: 0.65rem 0;
-  border-bottom: 1px solid var(--line);
-}
-.goals li:last-child {
-  border-bottom: 0;
-}
-.goals i {
-  color: var(--neon-cy);
-  font-size: 1.15rem;
-  margin-top: 0.1rem;
-}
-.sticky-offset {
-  top: 6.5rem;
-}
 .lead-form {
   padding-top: 1.25rem;
   border-top: 1px solid var(--line);
@@ -704,7 +647,6 @@ a {
 .avatar--pose:hover {
   transform: rotate(-4deg) scale(1.18);
 }
-
 // ---------- WhatsApp flutuante ----------
 .wa-fab {
   z-index: 1050;

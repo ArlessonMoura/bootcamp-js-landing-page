@@ -116,7 +116,7 @@
                   <img
                     id="term-avatar"
                     class="term-avatar"
-                    src="./img/genious-idea.png"
+                    src="./img/happy.png"
                     width="96"
                     height="96"
                     alt=""
@@ -321,18 +321,22 @@
           <div class="row g-4 g-lg-5 align-items-start">
             <div class="col-12">
               <div class="glass p-3 p-md-4">
-                <div class="d-flex flex-column flex-sm-row align-items-center gap-3 mb-3">
+                <div
+                  id="lead-intro"
+                  class="d-flex flex-column flex-sm-row align-items-center gap-3 mb-3"
+                >
                   <img
                     class="avatar"
-                    id="lead-avatar"
-                    src="/img/call-me.png"
+                    src="./img/call-me.png"
                     alt="Avatar do instrutor fazendo o gesto de telefone"
                     width="360"
                     height="338"
                     loading="lazy"
                   />
                   <div class="text-center text-sm-start">
-                    <h2 class="h3 mb-2">Seu próximo passo começa aqui</h2>
+                    <h2 class="h3 mb-2" id="lead-heading" tabindex="-1">
+                      Seu próximo passo começa aqui
+                    </h2>
                     <p class="text-body-secondary mb-0">
                       Informe seu nome e WhatsApp. Vou entrar em contato para explicar
                       como o bootcamp funciona.
@@ -442,39 +446,37 @@
                     </div>
                   </div>
                 </form>
+                <div
+                  id="lead-success"
+                  class="lead-success d-none text-center"
+                  aria-live="polite"
+                >
+                  <img
+                    class="avatar avatar--pose mx-auto mb-3"
+                    src="./img/wink.png"
+                    alt="Avatar piscando em sinal de incentivo"
+                    width="267"
+                    height="311"
+                  />
+                  <h2 class="h3 mb-2" id="lead-success-title" tabindex="-1">
+                    Recebemos seu interesse!
+                  </h2>
+                  <p class="text-body-secondary mb-4">
+                    Obrigado. Em breve entraremos em contato pelo WhatsApp informado.
+                  </p>
+                  <p id="lead-preview-note" class="small text-body-secondary d-none">
+                    Prévia local: os dados não foram enviados.
+                  </p>
+                  <button class="btn btn-neon" id="lead-new-proposal" type="button">
+                    Preencher outra proposta
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
     </main>
-
-    <div
-      class="modal fade"
-      id="submission-success"
-      tabindex="-1"
-      aria-labelledby="submission-success-title"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content glass text-center p-4">
-          <img
-            class="avatar avatar--pose mx-auto mb-3"
-            src="/img/wink.png"
-            alt="Avatar piscando em sinal de incentivo"
-            width="180"
-            height="169"
-          />
-          <h2 class="h3" id="submission-success-title">Recebemos seu interesse!</h2>
-          <p class="text-body-secondary mb-4">
-            Obrigado. Em breve entraremos em contato pelo WhatsApp informado.
-          </p>
-          <button class="btn btn-neon" type="button" data-bs-dismiss="modal">
-            Fechar
-          </button>
-        </div>
-      </div>
-    </div>
 
     <footer class="text-center text-body-secondary py-4 pb-5">Per Aspera Ad Astra</footer>
 
@@ -486,7 +488,7 @@
       rel="noopener"
       aria-label="Tirar dúvidas no WhatsApp"
     >
-      <i class="bi bi-whatsapp"></i><span>Dúvidas?</span>
+      <i class="bi bi-whatsapp" aria-hidden="true"></i><span>Dúvidas?</span>
     </a>
 
     <script type="module" src="/src/main.js"></script>
