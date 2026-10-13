@@ -147,6 +147,8 @@ whatsappInput.addEventListener('input', () => {
 /* ---------- envio do formulário ---------- */
 const leadForm = $('form[name="interesse-bootcamp"]');
 const leadError = $('#lead-error');
+const leadStatus = $('#lead-status');
+const leadWhatsapp = $('[data-wa]');
 const leadIntro = $('#lead-intro');
 const leadSuccess = $('#lead-success');
 const leadPreviewNote = $('#lead-preview-note');
@@ -155,25 +157,61 @@ const submitButton = leadForm.querySelector('[type="submit"]');
 leadForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   leadError.classList.add('d-none');
+  leadStatus.classList.add('d-none');
+  leadWhatsapp.href = waUrl;
   submitButton.disabled = true;
   leadForm.setAttribute('aria-busy', 'true');
+  const formData = new FormData(leadForm);
 
   try {
     if (import.meta.env.DEV) {
       leadPreviewNote.classList.remove('d-none');
     } else {
-      const response = await fetch(leadForm.action, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(leadForm)).toString(),
-      });
-      if (!response.ok) throw new Error('Form submission failed');
+      let accepted = false;
+      for (let attempt = 1; attempt <= 2; attempt += 1) {
+        leadStatus.textContent = `Enviando inscrição (tentativa ${attempt} de 2)...`;
+        leadStatus.classList.remove('d-none');
+        const controller = new AbortController();
+        const requestTimeout = window.setTimeout(() => controller.abort(), 15000);
+
+        try {
+          const response = await fetch(leadForm.action, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString(),
+            signal: controller.signal,
+          });
+          accepted = response.ok;
+        } catch (error) {
+          if (attempt === 2) throw error;
+        } finally {
+          window.clearTimeout(requestTimeout);
+        }
+
+        if (accepted) break;
+      }
+      if (!accepted) throw new Error('Form submission failed after two attempts');
     }
+    leadWhatsapp.href = waUrl;
+    leadStatus.classList.add('d-none');
     leadIntro.classList.add('d-none');
     leadForm.classList.add('d-none');
     leadSuccess.classList.remove('d-none');
     $('#lead-success-title').focus();
   } catch {
+    const name = String(formData.get('nome') ?? '').trim();
+    const phone = String(formData.get('whatsapp') ?? '').trim();
+    const referrer = String(formData.get('nome-indicacao') ?? '').trim();
+    const message = [
+      'Olá! Tentei enviar minha inscrição no Bootcamp Full Stack, mas não consegui confirmar o recebimento.',
+      `Nome: ${name}`,
+      `WhatsApp: ${phone}`,
+      referrer ? `Indicação: ${referrer}` : '',
+    ]
+      .filter(Boolean)
+      .join('\n');
+    leadWhatsapp.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    leadStatus.classList.add('d-none');
     leadError.classList.remove('d-none');
   } finally {
     submitButton.disabled = false;
@@ -184,6 +222,8 @@ leadForm.addEventListener('submit', async (event) => {
 $('#lead-new-proposal').addEventListener('click', () => {
   leadForm.reset();
   leadError.classList.add('d-none');
+  leadStatus.classList.add('d-none');
+  leadWhatsapp.href = waUrl;
   leadPreviewNote.classList.add('d-none');
   leadIntro.classList.remove('d-none');
   leadForm.classList.remove('d-none');
